@@ -1,0 +1,50 @@
+.header {
+    &__container {
+        display: flex;
+        align-items: center;
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+    &__hamburger {
+        display: none;
+        width: 20px;
+        height: 18px;
+        border-color: transparent;
+        background-color: $white;
+        background-image: url('../image/hamburger.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &__logo {
+        display: inline-block;
+        flex-shrink: 0;
+    }
+}
+// RESPONSIVE
+@media only screen and (max-width: 650px) {
+    .header {
+        position: relative;
+        &__hamburger {
+            display: inline-block;
+        }
+        &__logo {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &--open .sitenav {
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+            width: 80%;
+            position: absolute;
+            top: 100%;
+            left: -60px;
+            background-color: $gray;
+        }
+        &--open &__hamburger {
+            background-image: url('../image/back.svg');
+            background-size: 18px 18px;
+            
+        }
+    }
+}
